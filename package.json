@@ -1,0 +1,27 @@
+{
+  "name": "cup-size-tmall",
+  "version": "1.0.0",
+  "description": "天猫女性内衣商品评论分析",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Songyang2017/cup-size-tmall.git"
+  },
+  "keywords": [
+    "node",
+    "javascript"
+  ],
+  "author": "冬日暖阳",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Songyang2017/cup-size-tmall/issues"
+  },
+  "homepage": "https://github.com/Songyang2017/cup-size-tmall#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "express": "^4.16.4"
+  }
+}
