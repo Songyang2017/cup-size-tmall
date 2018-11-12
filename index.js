@@ -1,10 +1,12 @@
 var express = require('express')
 var axios = require('axios')
+var mysql = require('mysql')
 var api = require('./api/api')
 const port = 3001
 app = express();
 
 app.use('/api', api)
+app.use('/', express.static('static'))
 
 app.get('/', function(req, res){
 	// res.send('hw')
@@ -12,12 +14,6 @@ app.get('/', function(req, res){
 }).listen(port, function(){
 	console.log('server is running at ' + port)
 })
-
-function grab(n) {
-
-}
-
-
 
 var maxSize = 100;
 var list = []
@@ -56,4 +52,23 @@ function grab(n=1) {
 	})	
 }
 
-grab()
+//连接数据库
+let connection = mysql.createConnection({
+	host     : 'localhost',
+	user     : 'root',
+	password : '',
+	database: 'test',
+	port:3306
+})
+connection.connect()
+// console.log('connection', connection)
+let creatTable = 'create table if not exists articleList(art_id int primary KEY AUTO_INCREMENT, art_title text, art_date int, art_content text)'
+connection.query(creatTable, function(err, rows, fields){
+
+})
+
+connection.end()
+
+app.post('/postList', function(req, res) {
+	console.log(req.body)
+})
