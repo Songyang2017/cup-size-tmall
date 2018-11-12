@@ -7,6 +7,7 @@ apiRouter.use(function(req,res,next){
 })
 apiRouter.get('/comments', function(req, res){
 	console.log('api')
+
 })
 
 module.exports = apiRouter
